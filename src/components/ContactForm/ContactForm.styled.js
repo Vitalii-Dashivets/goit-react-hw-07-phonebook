@@ -6,7 +6,7 @@ export const FormStyle = styled.form`
   justify-content: space-between;
   margin-bottom: 60px;
   width: 900px;
-  background-color: rgba(130, 250, 168, 0.5);
+  background-color: rgba(232, 116, 225, 0.3);
 `;
 
 export const InputStyle = styled.input`
@@ -23,7 +23,7 @@ export const Label = styled.label`
 export const ButtonStyle = styled.button`
   width: 100px;
   height: 50px;
-  background-color: grey;
+  background-color: rgba(216, 116, 225, 0.8);
   font-size: 20px;
   border-radius: 10px;
 `;

@@ -11,7 +11,7 @@ export const ContactStyle = styled.li`
 export const ButtonStyle = styled.button`
   width: 100px;
   height: 50px;
-  background-color: grey;
+  background-color: rgba(216, 116, 225, 0.8);
   font-size: 20px;
   border-radius: 10px;
 `;
