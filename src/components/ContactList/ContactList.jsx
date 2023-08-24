@@ -3,7 +3,7 @@ import { Contact } from 'components/Contact/Contact';
 import { getFilter, getContacts } from 'redux/selectors';
 import { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { thunkGetContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/operations';
 
 export function ContactList() {
   const filterValue = useSelector(getFilter);
@@ -11,7 +11,7 @@ export function ContactList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(thunkGetContacts('/contacts'));
+    dispatch(fetchContacts('/contacts'));
   }, [dispatch]);
 
   const visibleContacts = useMemo(() => {

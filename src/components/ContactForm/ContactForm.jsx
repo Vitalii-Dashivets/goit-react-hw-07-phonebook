@@ -11,7 +11,7 @@ import {
   ButtonStyle,
   Label,
 } from './ContactForm.styled';
-import { thunkAddContacts } from 'redux/operations';
+import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -26,7 +26,7 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts`);
       return false;
     }
-    dispatch(thunkAddContacts({ name: name, number: number }));
+    dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };

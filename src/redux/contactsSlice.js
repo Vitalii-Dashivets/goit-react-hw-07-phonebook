@@ -1,9 +1,5 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
-import {
-  thunkGetContacts,
-  thunkAddContacts,
-  thunkDeleteContacts,
-} from './operations';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchContacts, addContact, deleteContact } from './operations';
 
 const initialState = {
   items: [],
@@ -11,73 +7,45 @@ const initialState = {
   error: null,
 };
 
+const handlePending = state => {
+  state.isLoading = true;
+};
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: initialState,
   extraReducers: {
-    [thunkGetContacts.pending](state) {
-      state.isLoading = true;
-    },
-    [thunkGetContacts.fulfilled](state, action) {
+    [fetchContacts.pending]: handlePending,
+    [fetchContacts.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
     },
-    [thunkGetContacts.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+    [fetchContacts.rejected]: handleRejected,
 
-    [thunkAddContacts.pending](state) {
-      state.isLoading = true;
-    },
-    [thunkAddContacts.fulfilled](state, action) {
+    [addContact.pending]: handlePending,
+    [addContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
     },
-    [thunkAddContacts.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    [thunkDeleteContacts.pending](state) {
-      state.isLoading = true;
-    },
-    [thunkDeleteContacts.fulfilled](state, action) {
+    [addContact.rejected]: handleRejected,
+    [deleteContact.pending]: handlePending,
+    [deleteContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items.push(action.payload);
+      state.error = null;
+      const index = state.items.findIndex(
+        task => task.id === action.payload.id
+      );
+      state.items.splice(index, 1);
     },
-    [thunkDeleteContacts.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+    [deleteContact.rejected]: handleRejected,
   },
 });
 
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
-
-// const contactsSlice = createSlice({
-//   name: 'contacts',
-//   initialState: initialState,
-//   reducers: {
-//     addContact: {
-//       reducer(state, action) {
-//         state.push(action.payload);
-//       },
-//       prepare(data) {
-//         return {
-//           payload: {
-//             ...data,
-//             id: nanoid(),
-//           },
-//         };
-//       },
-//     },
-//     deleteContact(state, action) {
-//       const index = state.findIndex(contact => contact.id === action.payload);
-//       state.splice(index, 1);
-//     },
-//   },
-// });
