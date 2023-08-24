@@ -4,7 +4,7 @@ import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { AppSection, TitleOne } from './APP.styled';
 import { Loader } from 'components/Loader/Loader';
-// const LS_KEY = 'contacts';
+
 import { useSelector } from 'react-redux';
 import { getIsLoading } from 'redux/selectors';
 

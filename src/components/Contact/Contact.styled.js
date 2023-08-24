@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const ContactStyle = styled.li`
   display: flex;
-  width: 500px;
+  width: 700px;
   justify-content: space-between;
   align-items: center;
   font-size: 30px;
