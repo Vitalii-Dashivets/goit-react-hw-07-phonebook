@@ -1,11 +1,18 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { Contact } from 'components/Contact/Contact';
 import { getFilter, getContacts } from 'redux/selectors';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { thunkGetContacts } from 'redux/operations';
 
 export function ContactList() {
   const filterValue = useSelector(getFilter);
   const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(thunkGetContacts('/contacts'));
+  }, [dispatch]);
 
   const visibleContacts = useMemo(() => {
     const normalizedFilter = filterValue.toLowerCase();

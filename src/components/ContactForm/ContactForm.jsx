@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactsSlice';
+// import { addContact } from 'redux/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+// import { nanoid } from '@reduxjs/toolkit';
 
 import {
   FormStyle,
@@ -10,6 +11,7 @@ import {
   ButtonStyle,
   Label,
 } from './ContactForm.styled';
+import { thunkAddContacts } from 'redux/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -24,7 +26,7 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts`);
       return false;
     }
-    dispatch(addContact({ name, number }));
+    dispatch(thunkAddContacts({ name: name, number: number }));
     setName('');
     setNumber('');
   };
