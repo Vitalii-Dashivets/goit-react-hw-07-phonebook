@@ -16,9 +16,9 @@ export function ContactList() {
 
   const visibleContacts = useMemo(() => {
     const normalizedFilter = filterValue.toLowerCase();
-    return contacts.filter(contact => {
-      return contact.name.toLowerCase().includes(normalizedFilter, 0);
-    });
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter, 0)
+    );
   }, [filterValue, contacts]);
 
   return visibleContacts.map(item => {

@@ -1,5 +1,9 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
-import { thunkGetContacts, thunkAddContacts } from './operations';
+import {
+  thunkGetContacts,
+  thunkAddContacts,
+  thunkDeleteContacts,
+} from './operations';
 
 const initialState = {
   items: [],
@@ -36,10 +40,22 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    [thunkDeleteContacts.pending](state) {
+      state.isLoading = true;
+    },
+    [thunkDeleteContacts.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
+    },
+    [thunkDeleteContacts.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
-export const { addContact, deleteContact } = contactsSlice.actions;
+// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
 
 // const contactsSlice = createSlice({
