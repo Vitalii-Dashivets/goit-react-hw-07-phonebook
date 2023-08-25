@@ -29,6 +29,7 @@ export const Filter = () => {
           name="filter"
           value={filter}
           onChange={evt => onChangeFilter(evt)}
+          placeholder="Enter search name"
         ></FilterInput>
       </FilterLabel>
       <FilterLabel>
