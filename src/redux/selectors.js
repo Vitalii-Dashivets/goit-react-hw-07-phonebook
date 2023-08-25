@@ -4,16 +4,23 @@ export const selectFilter = state => state.filter;
 export const selectIsLoading = state => state.contacts.isLoading;
 export const selectError = state => state.contacts.error;
 export const selectContacts = state => state.contacts.items;
+export const selectIsSorted = state => state.sortByName;
 
 export const selectVisibleContacts = createSelector(
-  [selectContacts, selectFilter],
-  (contacts, filterValue) => {
+  [selectContacts, selectFilter, selectIsSorted],
+  (contacts, filterValue, isSorted) => {
     const normalizedFilter = filterValue.toLowerCase();
-
-    const sortedContacts = [...contacts].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-    return sortedContacts.filter(contact =>
+    if (isSorted) {
+      const sortedContacts = [...contacts].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      return sortedContacts.filter(contact =>
+        contact.name.toLowerCase().includes(normalizedFilter, 0)
+      );
+    }
+    // const sortedContacts =
+    //    [...contacts].sort((a, b) => a.name.localeCompare(b.name));
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter, 0)
     );
   }

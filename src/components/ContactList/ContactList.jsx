@@ -4,6 +4,7 @@ import { selectVisibleContacts } from 'redux/selectors';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
+import { List } from './ContactList.styled';
 
 export function ContactList() {
   const dispatch = useDispatch();
@@ -20,7 +21,11 @@ export function ContactList() {
   //   );
   // }, [filterValue, contacts]);
 
-  return visibleContacts.map(item => {
-    return <Contact key={item.id} contact={item} id={item.id} />;
-  });
+  return (
+    <List>
+      {visibleContacts.map(item => {
+        return <Contact key={item.id} contact={item} id={item.id} />;
+      })}
+    </List>
+  );
 }

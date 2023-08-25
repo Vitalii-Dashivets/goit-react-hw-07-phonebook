@@ -2,10 +2,14 @@ import styled from '@emotion/styled';
 
 export const FilterStyle = styled.div`
   font-size: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FilterInput = styled.input`
+  margin-left: 10px;
   width: 200px;
   font-size: 20px;
   height: 30px;
@@ -13,5 +17,16 @@ export const FilterInput = styled.input`
   border-radius: 8px;
 `;
 export const FilterLabel = styled.label`
+  background-color: rgba(232, 116, 225, 0.3);
+
   margin-right: 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const Checkbox = styled.input`
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
 `;

@@ -1,16 +1,25 @@
 import React from 'react';
 
-import { selectFilter } from 'redux/selectors';
+import { selectFilter, selectIsSorted } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
-import { FilterStyle, FilterInput, FilterLabel } from './Filter.styled';
+import { setSortByName } from 'redux/sortSlice';
+import {
+  FilterStyle,
+  FilterInput,
+  FilterLabel,
+  Checkbox,
+} from './Filter.styled';
 
 export const Filter = () => {
   const filter = useSelector(selectFilter);
+  const isSorted = useSelector(selectIsSorted);
   const dispatch = useDispatch();
 
   const onChangeFilter = evt => dispatch(setFilter(evt.target.value));
-
+  const onChangeSortedByName = evt => {
+    return dispatch(setSortByName(evt.target.checked));
+  };
   return (
     <FilterStyle>
       <FilterLabel>
@@ -21,6 +30,14 @@ export const Filter = () => {
           value={filter}
           onChange={evt => onChangeFilter(evt)}
         ></FilterInput>
+      </FilterLabel>
+      <FilterLabel>
+        Sort by name
+        <Checkbox
+          type="checkbox"
+          checked={isSorted}
+          onChange={onChangeSortedByName}
+        />
       </FilterLabel>
     </FilterStyle>
   );
