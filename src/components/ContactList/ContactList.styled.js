@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
+  padding: 0 20px;
   margin: 0;
   overflow-y: scroll;
-  height: 320px;
+  height: calc(100vh - 450px);
 `;
 export const ListContainer = styled.div`
+  width: 930px;
+  height: calc(100vh - 450px);
   padding: 5px;
-  border: 2px solid red;
+  border: 3px solid rgba(216, 116, 225, 1);
   border-radius: 10px;
-  background-color: rgba(232, 116, 225, 0.3);
+  background-color: rgba(200, 200, 200, 0.8);
 `;
