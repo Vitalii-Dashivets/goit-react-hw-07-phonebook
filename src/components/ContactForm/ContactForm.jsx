@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { selectContacts, selectIsSorted } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
