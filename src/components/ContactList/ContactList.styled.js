@@ -14,3 +14,7 @@ export const ListContainer = styled.div`
   border-radius: 10px;
   background-color: rgba(200, 200, 200, 0.8);
 `;
+export const Message = styled.p`
+  text-align: center;
+  font-size: 30px;
+`;
