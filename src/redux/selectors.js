@@ -10,14 +10,19 @@ export const selectVisibleContacts = createSelector(
   [selectContacts, selectFilter, selectIsSorted],
   (contacts, filterValue, isSorted) => {
     const normalizedFilter = filterValue.toLowerCase();
-    if (isSorted) {
-      return (contacts = [...contacts].sort((a, b) =>
-        a.name.localeCompare(b.name)
-      ));
+    switch (isSorted) {
+      case false:
+        return contacts.filter(contact =>
+          contact.name.toLowerCase().includes(normalizedFilter, 0)
+        );
+      case true:
+        return contacts
+          .filter(contact =>
+            contact.name.toLowerCase().includes(normalizedFilter, 0)
+          )
+          .sort((a, b) => a.name.localeCompare(b.name));
+      default:
+        return contacts;
     }
-
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter, 0)
-    );
   }
 );
