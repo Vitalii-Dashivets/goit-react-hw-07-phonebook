@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts, selectIsSorted } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -10,11 +10,13 @@ import {
   Label,
 } from './ContactForm.styled';
 import { addContact } from 'redux/operations';
+import { setSortByName } from 'redux/sortSlice';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(selectContacts);
+  const isSorted = useSelector(selectIsSorted);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
@@ -24,6 +26,8 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts`);
       return false;
     }
+
+    dispatch(setSortByName(false));
     dispatch(addContact({ name, number }));
     setName('');
     setNumber('');

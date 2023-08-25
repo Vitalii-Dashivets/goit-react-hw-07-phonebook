@@ -11,15 +11,11 @@ export const selectVisibleContacts = createSelector(
   (contacts, filterValue, isSorted) => {
     const normalizedFilter = filterValue.toLowerCase();
     if (isSorted) {
-      const sortedContacts = [...contacts].sort((a, b) =>
+      return (contacts = [...contacts].sort((a, b) =>
         a.name.localeCompare(b.name)
-      );
-      return sortedContacts.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter, 0)
-      );
+      ));
     }
-    // const sortedContacts =
-    //    [...contacts].sort((a, b) => a.name.localeCompare(b.name));
+
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter, 0)
     );
