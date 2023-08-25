@@ -32,6 +32,7 @@ export const ButtonStyle = styled.button`
   background-color: rgba(216, 116, 225, 0.8);
   font-size: 20px;
   border-radius: 10px;
+  border: none;
   &:hover {
     background-color: rgba(250, 100, 225, 1);
   }

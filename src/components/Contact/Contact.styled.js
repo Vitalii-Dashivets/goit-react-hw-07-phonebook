@@ -16,6 +16,7 @@ export const ButtonStyle = styled.button`
   height: 50px;
   background-color: rgba(216, 116, 225, 0.6);
   font-size: 20px;
+  border: none;
   border-radius: 10px;
 
   &:hover {
@@ -23,7 +24,7 @@ export const ButtonStyle = styled.button`
   }
 `;
 export const Name = styled.p`
-  width: 350px;
+  width: 380px;
 `;
 
 export const Number = styled.p`
