@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -14,7 +14,7 @@ import { addContact } from 'redux/operations';
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
