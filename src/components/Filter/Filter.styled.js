@@ -21,6 +21,9 @@ export const FilterInput = styled.input`
   height: 30px;
   border: 2px solid rgba(216, 116, 225, 1);
   border-radius: 8px;
+  &:focus {
+    outline-color: blue;
+  }
 `;
 export const FilterLabel = styled.label`
   margin-right: 20px;

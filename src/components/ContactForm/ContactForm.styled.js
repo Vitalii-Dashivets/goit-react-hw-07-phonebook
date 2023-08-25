@@ -20,6 +20,9 @@ export const InputStyle = styled.input`
   border-radius: 8px;
   margin-left: 20px;
   margin-right: auto;
+  &:focus {
+    outline-color: blue;
+  }
 `;
 export const Label = styled.label`
   font-size: 30px;
