@@ -27,11 +27,13 @@ export const Label = styled.label`
 `;
 
 export const ButtonStyle = styled.button`
-  width: 100px;
-  height: 50px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  /* height: 50px; */
   background-color: rgba(216, 116, 225, 0.8);
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   border: none;
   &:hover {
     background-color: rgba(250, 100, 225, 1);

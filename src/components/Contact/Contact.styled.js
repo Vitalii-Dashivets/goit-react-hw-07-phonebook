@@ -11,13 +11,13 @@ export const ContactStyle = styled.li`
   font-weight: 400;
 `;
 export const ButtonStyle = styled.button`
-  display: inline-block;
-  width: 100px;
-  height: 50px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
   background-color: rgba(216, 116, 225, 0.6);
   font-size: 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
 
   &:hover {
     background-color: rgba(250, 100, 225, 1);
