@@ -16,8 +16,16 @@ export const AppSection = styled.div`
 
 export const TitleOne = styled.h1`
   font-size: 32px;
+  color: rgba(50, 50, 50, 0.5);
+  border-radius: 17px;
+  padding: 0 20px;
+  box-shadow: 2px 3px 3px 2px rgba(20, 20, 20, 0.5);
 `;
 
 export const TitleContacts = styled.h2`
   font-size: 32px;
+  color: rgba(50, 50, 50, 0.5);
+  border-radius: 17px;
+  padding: 0 20px;
+  box-shadow: 2px 3px 3px 2px rgba(20, 20, 20, 0.5);
 `;

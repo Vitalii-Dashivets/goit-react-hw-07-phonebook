@@ -7,17 +7,20 @@ export const FormStyle = styled.form`
   margin-bottom: 20px;
   width: 900px;
   padding: 20px;
-  border: 3px solid rgba(216, 116, 225, 1);
+  /* border: 3px solid rgba(216, 116, 225, 1); */
   border-radius: 10px;
   background-color: rgba(200, 200, 200, 0.8);
+  box-shadow: 2px 3px 3px 2px rgba(20, 20, 20, 0.5);
+  font-style: italic;
 `;
 
 export const InputStyle = styled.input`
   height: 30px;
   width: 200px;
   font-size: 20px;
+  padding: 0 10px;
   border: 2px solid rgba(216, 116, 225, 1);
-  border-radius: 8px;
+  border-radius: 17px;
   margin-left: 20px;
   margin-right: auto;
   &:focus {
@@ -30,7 +33,7 @@ export const Label = styled.label`
 `;
 
 export const ButtonStyle = styled.button`
-  padding: 15px;
+  padding: 10px 25px;
   display: flex;
   align-items: center;
   /* height: 50px; */

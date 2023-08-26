@@ -33,7 +33,7 @@ export const Filter = () => {
         ></FilterInput>
       </FilterLabel>
       <FilterLabel>
-        Sort by name
+        [A-Z]
         <Checkbox
           type="checkbox"
           checked={isSorted}

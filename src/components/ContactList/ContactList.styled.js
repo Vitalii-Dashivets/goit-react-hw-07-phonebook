@@ -10,9 +10,10 @@ export const ListContainer = styled.div`
   width: 930px;
   height: calc(100vh - 450px);
   padding: 5px;
-  border: 3px solid rgba(216, 116, 225, 1);
+  /* border: 3px solid rgba(216, 116, 225, 1); */
   border-radius: 10px;
   background-color: rgba(200, 200, 200, 0.8);
+  box-shadow: 2px 3px 3px 2px rgba(20, 20, 20, 0.5);
 `;
 export const Message = styled.p`
   text-align: center;
