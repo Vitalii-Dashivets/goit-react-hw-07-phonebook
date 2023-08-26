@@ -19,7 +19,7 @@ export const InputStyle = styled.input`
   width: 200px;
   font-size: 20px;
   padding: 0 10px;
-  border: 2px solid rgba(216, 116, 225, 1);
+  border: 2px solid pink;
   border-radius: 17px;
   margin-left: 20px;
   margin-right: auto;
@@ -37,10 +37,11 @@ export const ButtonStyle = styled.button`
   display: flex;
   align-items: center;
   /* height: 50px; */
-  background-color: rgba(216, 116, 225, 0.8);
+  background-color: pink;
   font-size: 20px;
   border-radius: 25px;
   border: none;
+  box-shadow: 2px 2px 2px 0px rgba(20, 20, 20, 0.5);
   &:hover {
     background-color: rgba(250, 100, 225, 1);
   }

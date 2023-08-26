@@ -21,11 +21,11 @@ export const ButtonStyle = styled.button`
   padding: 5px 25px;
   display: flex;
   align-items: center;
-  background-color: rgba(216, 116, 225, 0.6);
+  background-color: pink;
   /* font-size: 20px; */
   border: none;
   border-radius: 25px;
-
+  box-shadow: 2px 2px 2px 0px rgba(20, 20, 20, 0.5);
   &:hover {
     background-color: rgba(250, 100, 225, 1);
   }

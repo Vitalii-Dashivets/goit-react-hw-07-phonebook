@@ -12,7 +12,7 @@ export const FilterStyle = styled.div`
   /* border: 3px solid rgba(216, 116, 225, 1); */
   border-radius: 10px;
   background-color: rgba(200, 200, 200, 0.8);
-  box-shadow: 2px 3px 3px 2px rgba(20, 20, 20, 0.5);
+  box-shadow: 2px 3px 4px 2px rgba(20, 20, 20, 0.5);
   font-style: italic;
 `;
 
@@ -21,7 +21,7 @@ export const FilterInput = styled.input`
   width: 200px;
   font-size: 20px;
   height: 30px;
-  border: 2px solid rgba(216, 116, 225, 1);
+  border: 2px solid pink;
   border-radius: 17px;
   padding: 0 15px;
   &:focus {
