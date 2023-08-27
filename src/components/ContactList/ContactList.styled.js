@@ -8,7 +8,7 @@ export const List = styled.ul`
 `;
 export const ListContainer = styled.div`
   width: 930px;
-  height: calc(100vh - 450px);
+  height: calc(100vh - 440px);
   padding: 5px;
   /* border: 3px solid rgba(216, 116, 225, 1); */
   border-radius: 10px;
