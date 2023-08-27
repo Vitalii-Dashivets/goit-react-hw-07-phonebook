@@ -7,7 +7,7 @@ export const List = styled.ul`
   height: calc(100vh - 450px);
 `;
 export const ListContainer = styled.div`
-  width: 930px;
+  width: 900px;
   height: calc(100vh - 440px);
   padding: 5px;
   /* border: 3px solid rgba(216, 116, 225, 1); */
